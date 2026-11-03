@@ -33,12 +33,12 @@ Read:    Wiki: SWIFT | https://en.wikipedia.org/wiki/SWIFT
 Watched: # Foreign Exchange 101: What Happens When You Send Money Abroad? | https://www.youtube.com/watch?v=eoXdyO9oGJc
 
 AI used: ChatGPT
-Prompt(s) I asked the AI: Who introduced SWIFT? How is SWIFT used day to day? Who uses it?
+Prompt(s) I asked the AI: Who introduced SWIFT? How is SWIFT used day to day? Who uses it?  Your traffic generator sends MT103 messages — a format that is now retired for cross-border payment instructions. Why might a training lab still teach MT103? What would change if Balerica switched to pacs.008?
 One thing the AI said that I double-checked, and what I found:
 I double checked the founder and year. SWIFT actually has a website that confirmed it
 
 Paragraph (minimum 5 sentences):
-SWIFT is the Society for Worldwide Interbank Financial Telecommunication. Introduced by 239 banks in 1973. It doesn't move money, it does communication. 
+SWIFT is the Society for Worldwide Interbank Financial Telecommunication. Introduced by 239 banks in 1973. It doesn't move money, it does communication.Balerica used MT103 because its a simpler format that would be helpful in teaching. It also helps illustrate how the financial infrastructre connects to APIs. If the bank used pacs.008, changes would include: replacing MT103messages with XML, modifying the API to validate the new format, update the transaction proccessing, and more. 
 Numbers + sources:
 - 239 banks — swift.com (2026)
 
