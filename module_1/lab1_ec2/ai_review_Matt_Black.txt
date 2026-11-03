@@ -1,0 +1,35 @@
+# AI review summary
+
+AI used: Chat GPThttps://chatgpt.com/share/6ae995e2-34a8-83ea-a5c0-5aca7f419070
+
+Q1: If I logged on as the root user, would I need to use the sudo command?
+
+AI's answer, in my own words: No, the root user generally has very little restrictions. The sudo command is a temporary role that allows an ec2-user abilities above the normal  use. It also stressed the importance of the pwd command. Knowing what user you are logged in with is very important. A root user can potentially delete directories and that is something to be cautious of.
+How I checked it: I checked it by cooking up an instance from an AMI. It gives you root access as a default. I then ran the command: dnf install -y git. The instance was able to run it.
+
+
+Q2: On one of my runs, the bash installer command would stop after running for the first couple seconds. I had to go back and rerun the sudo dnf install command for it to work. Why did this happen? If git was not already installed, how did the git clone command work? 
+
+AI's answer, in my own words: It says that the fact that my git clone command worked and the git download was completed, there is no reason it could think of as the issue. The fact that I reran the sudo command and then the bash script worked is not necessarily a real solution. It most likely was an error that occurred during the scripts actions.  
+How I checked it: The troubleshooting  section of the runbook said to just rerun the bash command if it fails. I ran it about three times and it just wouldn't make it past the 3/9 check. It was only when I started back at the 
+
+
+Q3: In a real world situation, how would I actually know what ranges of numbers to use the cut -c command on a ledger? What if there is a big gap?
+
+AI's answer, in my own words: It said that companies usually have documentation on the ledgers so that you would not have to guess the proper ranges. For times where there is not a documentation it said the best choice is to contact the application's maintainers or the database administrators. It also said you can look for a sample account to get an idea of the lengths and formatting.
+How I checked it: There was no definitive way for me to confirm this, but oracle and IBM both had examples of copybooks. These copybooks laid out the structure and the contents of their application/data structure. It 
+
+
+Q4: Why do we call the methods HTTP methods? And is there a similar component on the other ports? 
+
+AI's answer, in my own words: They are called HTTP methods because it is a protocol that computers use to communicate with each other. HTTPS can also use the methods. It said that we actually run the same HTTP methods on port 8000 as well.
+How I checked it: I ran the uvicron command through port 9000. Everything works the same. I then did port 443 and it also worked. HTTP methods can be ran on different ports.
+
+
+Q5: Is it possible for somebody to harm the program through port 80 or port 8000? It is technically public in this lab.
+
+AI's answer, in my own words: Because all of the ports are open to everyone, it is vulnerable to attack. DDOS attacks and a general exposure of data can happen because of the inbound rules. It would be suggested that port 80 and 443 not have any inbound rules, and that port 22 and 8000 only have my IP address as an inbound rule.
+How I checked it: I accessed the port 80 and 8000 from an incognito tab and another browser. As long as the public DNS can be found, anybody can get access to the bank.
+
+
+The Ai was vague when trying to explain how I ran the sudo command and the bash command was able to run fully after. The error message gave more context but the Ai still doesn't have a real concrete explanation. It is saying that what I did to solve the issue really shouldn't have fixed anything.

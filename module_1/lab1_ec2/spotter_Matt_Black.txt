@@ -1,0 +1,26 @@
+My Spotter(s) = Darian
+## 5 things he learned:
+
+1. SSH Connections: Learned how to secure private keys using chmod 400 and connect to EC2 instances through SSH. I have done it before but a lot more familiar with the process and understanding "the why". 
+
+2. Time Zones and Metadata: Learned how to verify EC2 instance IDs, UTC boot times, and Taiwan local time using Linux commands.
+
+3. COBOL Return Codes: Learned how return codes 0, 4, 8, and 12 represent success, account errors, business rejections, and environmental failures. Just a general overview of COBOL and doing more research on the history of it and use cases. 
+
+4. Python Package Management: Learned to update 'pip' during Python environment setup and how software updates can help address known security vulnerabilities.
+
+5. Git and GitHub: Learned how to clone a GitHub repository onto an EC2 instance and verify its contents using ls -la.
+
+---
+I am spotting for (Darian)
+## 5 things I learned:
+
+1.   I learned how to interact with endpoints on the FastAPI screen. I have an app that I'm working on and I had no clue how to interact with it 
+
+2. I learned about the cut -c command. It can isolate text which was very useful for the decoding of the different accounts in the bank. 
+
+3. I learned depending on how you launch the instance, AWS might give the root login for SSH. The root actually does not have the ability to use certain commands that the ec2-user does.  
+
+4. I learned that an AMI can save all the downloads and cloning you do in an instance and allow you to create an instance with everything already loaded and ready. Pretty much the same way the instance looked when you closed it
+
+5. I learned 2 techniques to use and research more in Linux. The command find was used to help me find the ledgers and also to find file paths. To input multiple lines of code, if you input n\ and press enter, the cursor will place you on the next line and allow you to keep typing. It seems like some commands will not work unless its ran on its own.
