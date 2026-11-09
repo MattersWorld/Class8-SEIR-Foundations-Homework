@@ -1,0 +1,103 @@
+# Lesson2_Slack Homework notes
+
+
+Create instance from a template. Choose the most recent AMI or whatever AMI that was used up to the point of the assignment.
+When you use you own AMI, you are defaulted as the root user. We installed the directories on the ec2-user profile so you to cd back to the parent directory. (cd ..)
+Once you're there use ls to see what directories are there. You want to see "home". Cd into the home directory, and the into the ec2-user directory. From there you can access the SEIR-Foundations repo.
+
+Follow the directions given and make sure you do each command one at a time. Verify that the outputs match and proceed.
+
+
+When you use nano, you cannot use the mouse, only the keyboard. To exit use ctrl+O, enter, ctrl+X. 
+
+When you try to run the first homework py file, it will tell you to nano into it and add your name. 
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw1_hello_slack.py 
+CHOMP! Edit MY_NAME in this file first (nano hw1_hello_slack.py).
+(venv) [root@ip-172-31-18-165 balerica-bank]# nano hw1_hello_slack.py
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw1_hello_slack.py 
+Delivered! Go look at #balerica-alerts. That message is yours.
+```
+
+
+On the second py file, we receive an alert of all types of severities. 
+We received all because the file used a python loop. Loops basically will give multiple outputs until a condition is met. In this case, there are severity levels so the loop went through all and stopped.
+
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw2_severity_tour.py 
+INFO     -> DELIVERED to Slack
+WARNING  -> DELIVERED to Slack
+ERROR    -> DELIVERED to Slack
+CRITICAL -> DELIVERED to Slack
+```
+
+
+The third py file gave a time and date check on the server. It is about  5 hours ahead of my time. That is definitely something to be accounted for in a work setting.
+
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw3_server_time.py
+Delivered!
+Local fact: the server believes it is Sunday November 08, 2026 at 07:03:39 UTC.
+```
+
+For py file 4, the program gives a snapshot of how much of the storage is being used. The severity level is programmed based on how much space is remaining. Its good design for the output to be INFO severity because there is no issue or impending changes needed to be made. At 25% usage, it is simply a status update and not worth a real warning.
+
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw4_disk_watch.py
+Disk is 25.3% used -> severity INFO.
+Delivered!
+```
+
+Py file 5 the alert measures the processing load over the previous 1, 5, and 15 minutes. To make the number spike could download a large file like when we did the git clone, or we can have multiple transactions occur simultaneously.
+
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw5_load_check.py
+Load: 0.00 / 0.00 / 0.00 on 2 CPU(s) -> INFO
+Delivered!
+```
+
+Py file 6 the script gives random incident reports. The code 
+ is the report that would be worth getting up in the middle of the night to attend to. It not only is considered "CRITICAL", but if the account lookup fails the ability to process information or transactions may also be effected.
+
+
+
+Py script 7 is a good start of the day status report for the server. It combines the information from the previous scripts and combined it into one message
+
+```
+(venv) [root@ip-172-31-18-165 balerica-bank]# python hw7_morning_report.py
+MORNING REPORT — Balerica AI server
+- Time: 2026-11-08 07:32:04 UTC
+- Host: ip-172-31-18-165.ec2.internal (Linux x86_64)
+- Python: 3.9.25
+- Disk on / : 25.4% used
+- Load (1m): 0.15
+- Status: all checks ran. The bank greets the day.
+
+Delivered!
+```
+
+
+
+---
+
+# Part 2 - Predictions
+
+
+1.  I predict only one  alert will send. The critical alert is the only alert at or above the .env set severity. The outcome was the single critical alert. 
+```
+INFO     -> skipped by your threshold
+WARNING  -> skipped by your threshold
+ERROR    -> skipped by your threshold
+CRITICAL -> DELIVERED to Slack
+```
+
+2. When I ran script one the program skipped the message and did not send anything to the slack channel. It explained that if the slack alerts aren't enabled it will not send an alert. It is good to have a kill switch because during maintenance, there can be errors but to keep the system from constantly flagging the slack feed. They won't actually be real flags. So when the instance is back in operation, you can enable alerts.
+```
+Skipped. Check .env: SLACK_ALERTS_ENABLED must be true and SLACK_ALERT_SEVERITY=INFO (see homework README).
+```
+
+3. The severity did change when I lowered the threshold of the Warning alert. 
+```
+Disk is 25.4% used -> severity WARNING.
+Skipped by threshold — that can be correct behavior!
+```
