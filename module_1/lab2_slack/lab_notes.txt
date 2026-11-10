@@ -61,7 +61,7 @@ Py file 6 the script gives random incident reports. The code
 
 
 
-Py script 7 is a good start of the day status report for the server. It combines the information from the previous scripts and combined it into one message
+Py script 7 is a good start of the day status report for the server. It combines the information from the previous scripts and combined it into one message.
 
 ```
 (venv) [root@ip-172-31-18-165 balerica-bank]# python hw7_morning_report.py
